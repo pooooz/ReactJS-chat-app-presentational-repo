@@ -48,7 +48,7 @@ exports[`Profile Empty name value input 1`] = `
           </button>
         </div>
       </div>
-      <form
+      <div
         class="profile_changeName"
       >
         <div
@@ -64,14 +64,14 @@ exports[`Profile Empty name value input 1`] = `
           class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root profile_changeNameButton css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
           style="width: 100px; color: rgba(50, 205, 50, 1);"
           tabindex="0"
-          type="submit"
+          type="button"
         >
           Change name
           <span
             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
         </button>
-      </form>
+      </div>
     </section>
   </section>
 </DocumentFragment>

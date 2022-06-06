@@ -13,5 +13,5 @@ export const Default: ComponentStory<typeof Input> = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
   };
-  return <Input value={value} change={handleChange} type="text" />;
+  return <Input value={value} change={handleChange} />;
 };

@@ -11,9 +11,6 @@
       "src/*": [
         "./src/*"
       ],
-      "pages/*": [
-        "./src/pages/*"
-      ]
     },
     /* Projects */
     // "incremental": true,                              /* Enable incremental compilation */
