@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageList Render with snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="message__list"
+  >
+    <div
+      class="message"
+    >
+      <p
+        class="glitch"
+        data-text="Render"
+      >
+        Render
+      </p>
+      <p
+        class="glitch"
+        data-text="Author: <Render>"
+      >
+        Author: &lt;Render&gt;
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

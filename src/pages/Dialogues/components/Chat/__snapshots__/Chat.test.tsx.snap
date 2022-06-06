@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat Empty message sending 1`] = `
+<DocumentFragment>
+  <section
+    class="dialogue"
+  >
+    <div
+      class="border"
+    >
+      <div
+        class="message__list"
+      >
+        <div
+          class="message"
+        >
+          <p
+            class="glitch"
+            data-text="Initialization..."
+          >
+            Initialization...
+          </p>
+          <p
+            class="glitch"
+            data-text="Author: <Admin>"
+          >
+            Author: &lt;Admin&gt;
+          </p>
+        </div>
+      </div>
+    </div>
+    <form
+      class="form"
+    >
+      <div
+        class="input_wrap"
+      >
+        <input
+          class="input_green"
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root form__button css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+        style="width: 100px; color: rgba(50, 205, 50, 1);"
+        tabindex="0"
+        type="submit"
+      >
+        Send
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </form>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Chat Render with snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="dialogue"
+  >
+    <div
+      class="border"
+    >
+      <div
+        class="message__list"
+      >
+        <div
+          class="message"
+        >
+          <p
+            class="glitch"
+            data-text="Initialization..."
+          >
+            Initialization...
+          </p>
+          <p
+            class="glitch"
+            data-text="Author: <Admin>"
+          >
+            Author: &lt;Admin&gt;
+          </p>
+        </div>
+      </div>
+    </div>
+    <form
+      class="form"
+    >
+      <div
+        class="input_wrap"
+      >
+        <input
+          class="input_green"
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root form__button css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+        style="width: 100px; color: rgba(50, 205, 50, 1);"
+        tabindex="0"
+        type="submit"
+      >
+        Send
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </form>
+  </section>
+</DocumentFragment>
+`;

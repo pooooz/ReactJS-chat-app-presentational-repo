@@ -1,0 +1,25 @@
+.dialogue {
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  flex-grow: 2;
+}
+
+.form {
+  margin: 20px 0 0 0;
+  display: flex;
+}
+
+.form__button {
+  font-family: 'Press Start 2P', cursive !important;
+  background: transparent;
+  color: limegreen;
+  border: none;
+  cursor: pointer;
+}
+
+.border {
+  border: 1px dashed rgba(46, 66, 7, 0.3);
+}

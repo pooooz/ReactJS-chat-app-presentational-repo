@@ -1,0 +1,64 @@
+$text-color: white;
+
+.chatList {
+  font-family: 'Press Start 2P', cursive;
+  min-height: 929px;
+  min-width: 200px;
+  max-width: 360px;
+  margin: 0;
+  padding: 10px 10px 0 10px;
+  ul {
+    list-style: none;
+  }
+  background-color: rgba(46, 66, 7, 0.1);
+}
+
+.chatItem {
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chatHeader {
+  color: white;
+  text-align: center;
+}
+
+.link {
+  color: $text-color;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  max-width: 200px;
+  font-family: 'Press Start 2P', cursive;
+  color: $text-color;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.inputWrap:before {
+  content: '>';
+  color: $text-color
+}
+
+.button {
+  font-family: 'Press Start 2P', cursive;
+  color: $text-color;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.deleteButton {
+  font-family: 'Press Start 2P', cursive;
+  color: #6b0404;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+}

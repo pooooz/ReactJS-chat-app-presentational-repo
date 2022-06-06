@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatList test Adding an empty chat 1`] = `
+<DocumentFragment>
+  <aside
+    class="chatList"
+  >
+    <div
+      class="chatHeader"
+    >
+      Chats
+    </div>
+    <ul>
+      <li
+        class="chatItem"
+      >
+        <a
+          class="link"
+          href="/chats/initial"
+        >
+          initial
+        </a>
+        <button
+          class="deleteButton"
+        >
+          X
+        </button>
+      </li>
+    </ul>
+    <form
+      class="form"
+    >
+      <div
+        class="inputWrap"
+      >
+        <input
+          class="input"
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        class="button"
+        type="submit"
+      >
+        Add chat
+      </button>
+    </form>
+  </aside>
+</DocumentFragment>
+`;

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Empty name value input 1`] = `
+<DocumentFragment>
+  <section
+    class="profile"
+  >
+    <h1
+      class="profile_header"
+    >
+      Profile
+    </h1>
+    <div
+      class="profile_theme"
+    >
+      <p>
+        🌞 LIGHT 
+      </p>
+      <button
+        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root profile_changeTheme css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
+        style="width: 100px; color: rgba(50, 205, 50, 1);"
+        tabindex="0"
+        type="button"
+      >
+        Change theme
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+    <section
+      class="profile_name"
+    >
+      <div
+        class="profile_nameSection"
+      >
+        <h3>
+          Your name: Anonymous
+        </h3>
+        <div
+          class="profile_visibility"
+        >
+          Hide name in chat?
+          <button
+            class="profile_visibilityValuePositive"
+          >
+            Yes!
+          </button>
+        </div>
+      </div>
+      <form
+        class="profile_changeName"
+      >
+        <div
+          class="input_wrap"
+        >
+          <input
+            class="input_green"
+            type="text"
+            value=""
+          />
+        </div>
+        <button
+          class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root profile_changeNameButton css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
+          style="width: 100px; color: rgba(50, 205, 50, 1);"
+          tabindex="0"
+          type="submit"
+        >
+          Change name
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </form>
+    </section>
+  </section>
+</DocumentFragment>
+`;
