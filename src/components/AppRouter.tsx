@@ -1,11 +1,5 @@
-import React, { FC, Suspense, useEffect } from 'react';
+import React, { FC, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-
-import { auth } from 'src/services/firebase';
-
-import { changeAuth } from 'src/store/profile/slice';
-import { setUserId } from 'src/store/profile/slice';
 
 import { Sidebar } from './Sidebar/Sidebar';
 import { Dialogue } from 'pages/Dialogues/Dialogue';
@@ -17,21 +11,6 @@ import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
 export const AppRouter: FC = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        dispatch(changeAuth(true));
-        dispatch(setUserId(user.uid));
-      } else {
-        dispatch(changeAuth(false));
-      }
-    });
-
-    return unsubscribe;
-  });
-
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <BrowserRouter>

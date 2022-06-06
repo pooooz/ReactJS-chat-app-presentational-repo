@@ -1,22 +1,14 @@
-import React, { FC, useContext, useEffect, useState } from 'react';
+import React, { FC, useContext, useState } from 'react';
 import { ThemeContext } from 'src/utils/ThemeContext';
 import { useDispatch, useSelector } from 'react-redux';
-import { onValue } from 'firebase/database';
 
-import { toggleProfile, changeName, setName } from 'src/store/profile/slice';
-import {
-  selectName,
-  selectUserId,
-  selectVisible,
-} from 'src/store/profile/selectors';
+import { toggleProfile, changeName } from 'src/store/profile/slice';
+import { selectName, selectVisible } from 'src/store/profile/selectors';
 
 import { Button, ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import styles from './Profile.module.scss';
 import { Input } from 'src/components/Input/Input';
-import { refUserById } from 'src/services/firebase';
-import { ThunkDispatch } from 'redux-thunk';
-import { ProfileState } from 'src/store/profile/slice';
 
 const muiTheme = createTheme({
   typography: {
@@ -27,31 +19,15 @@ const muiTheme = createTheme({
 export const Profile: FC = () => {
   const [value, setValue] = useState('');
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const dispatchThunk =
-    useDispatch<
-      ThunkDispatch<ProfileState, void, ReturnType<typeof setName>>
-    >();
   const dispatch = useDispatch();
 
   const visible = useSelector(selectVisible);
   const name = useSelector(selectName);
-  const userId = useSelector(selectUserId);
-
-  useEffect(() => {
-    onValue(refUserById(userId), (snapshot) => {
-      const user = snapshot.val();
-      if (user) {
-        dispatch(setName(user.name || 'Anonymous'));
-      } else {
-        dispatchThunk(changeName({ userId: userId, name: 'Anonymous' }));
-      }
-    });
-  }, []);
 
   const handleChangeName = (event: React.FormEvent) => {
     event.preventDefault();
     if (value) {
-      dispatchThunk(changeName({ userId: userId, name: value }));
+      dispatch(changeName({ name: value }));
     }
     setValue('');
   };

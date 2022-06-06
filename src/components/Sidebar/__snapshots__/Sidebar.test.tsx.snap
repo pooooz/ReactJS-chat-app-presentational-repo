@@ -7,41 +7,23 @@ exports[`Sidebar Render component 1`] = `
   >
     <ul>
       <li
-        class="sidebar__element"
+        class="sidebar_element"
       >
         <a
-          class="sidebar__link"
+          class="link"
           href="/profile"
         >
           Profile
         </a>
       </li>
       <li
-        class="sidebar__element"
+        class="sidebar_element"
       >
         <a
-          aria-current="page"
-          class="sidebar__link active"
+          class="link"
           href="/chats"
         >
           Messages
-        </a>
-      </li>
-      <li
-        class="sidebar__element"
-      >
-        <a
-          class="sidebar__link"
-          href="/signin"
-        >
-          SignIn
-        </a>
-        |
-        <a
-          class="sidebar__link"
-          href="/signup"
-        >
-          SignUp
         </a>
       </li>
     </ul>
