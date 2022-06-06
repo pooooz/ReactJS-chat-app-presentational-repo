@@ -1,21 +1,26 @@
+import { useDispatch } from 'react-redux';
 import React, { FC, useState } from 'react';
 
 import { Input } from 'src/components/Input/Input';
-import { signIn } from 'src/services/firebase';
+import { changeAuth } from 'src/store/profile/slice';
 
 import styles from './SignIn.module.scss';
 
 export const SignIn: FC = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [error, setError] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      await signIn(login, password);
-    } catch (error) {
-      setError((error as Error).message);
+
+    setError(false);
+    if (login === 'POZ' && password === 'POZ') {
+      dispatch(changeAuth(true));
+    } else {
+      setError(true);
     }
   };
 
@@ -24,13 +29,13 @@ export const SignIn: FC = () => {
       <h2 className={styles.signIn__header}>Sign In</h2>
       <form className={styles.signIn__form} onSubmit={handleSubmit}>
         <div>
-          <p>Login:</p>
+          <p>Login (POZ):</p>
           <Input
             change={(e) => setLogin(e.target.value)}
             value={login}
             type="text"
           />
-          <p>Password:</p>
+          <p>Password (POZ):</p>
           <Input
             change={(e) => setPassword(e.target.value)}
             value={password}
@@ -38,7 +43,9 @@ export const SignIn: FC = () => {
           />
           <button className={styles.signIn__button}>sign in</button>
         </div>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && (
+          <p style={{ color: 'red' }}>Login or password is not correct</p>
+        )}
       </form>
     </section>
   );
