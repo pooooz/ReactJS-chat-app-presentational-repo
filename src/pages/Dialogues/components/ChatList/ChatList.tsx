@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { selectChatList } from 'src/store/dialogues/selectors';
-import { addChat, deleteChat } from 'src/store/dialogues/slice';
+import { addChat, deleteChat } from 'src/store/dialogues/actions';
 
 import styles from './ChatList.module.scss';
 
@@ -18,7 +18,7 @@ export const ChatList: FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (name) {
-      dispatch(addChat({ name }));
+      dispatch(addChat(name));
       setName('');
     }
   };
@@ -34,7 +34,7 @@ export const ChatList: FC = () => {
             </NavLink>
             <button
               className={styles.deleteButton}
-              onClick={() => dispatch(deleteChat({ chatId: chat.name }))}
+              onClick={() => dispatch(deleteChat(chat.name))}
             >
               X
             </button>

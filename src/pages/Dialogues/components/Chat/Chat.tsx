@@ -2,16 +2,17 @@ import React, { useState, FC } from 'react';
 import { Button } from '@mui/material';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { Navigate, useParams } from 'react-router-dom';
-import { ThunkDispatch } from 'redux-thunk';
 
 import { MessageListPure } from './components/MessageList/MessageList';
 import { WithClasses } from 'src/HOC/WithClasses';
 import { Input } from 'src/components/Input/Input';
-import { addMessage, addMessageWithReply } from 'src/store/dialogues/slice';
-import { DialoguesState } from 'src/store/dialogues/slice';
-import { selectChatList, selectChats } from 'src/store/dialogues/selectors';
+import { addMessageWithReply } from 'src/store/dialogues/actions';
+import { ThunkDispatch } from 'redux-thunk';
+import { DialoguesState } from 'src/store/dialogues/reducer';
+import { AddMessage } from 'src/store/dialogues/types';
 
 import styles from './Chat.module.scss';
+import { selectChatList, selectChats } from 'src/store/dialogues/selectors';
 
 export const Chat: FC = () => {
   const [inputValue, setInputValue] = useState<string>('');
@@ -19,9 +20,7 @@ export const Chat: FC = () => {
   const chats = useSelector(selectChats, shallowEqual);
   const chatList = useSelector(selectChatList, shallowEqual);
   const dispatch =
-    useDispatch<
-      ThunkDispatch<DialoguesState, void, ReturnType<typeof addMessage>>
-    >();
+    useDispatch<ThunkDispatch<DialoguesState, void, ReturnType<AddMessage>>>();
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
@@ -29,10 +28,7 @@ export const Chat: FC = () => {
   const handleSubmit = (event: React.FormEvent) => {
     if (inputValue && chatId) {
       dispatch(
-        addMessageWithReply({
-          chatId,
-          message: { author: 'You', text: inputValue },
-        })
+        addMessageWithReply(chatId, { text: inputValue, author: 'You' })
       );
       setInputValue('');
     }
@@ -52,7 +48,7 @@ export const Chat: FC = () => {
         classes={styles.border}
       />
       <form className={styles.form} onSubmit={handleSubmit}>
-        <Input value={inputValue} change={handleChange} type="text" />
+        <Input value={inputValue} change={handleChange} />
         <Button
           className={styles.form__button}
           type="submit"

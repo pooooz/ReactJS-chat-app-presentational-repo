@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import '@testing-library/jest-dom';
 import '@testing-library/user-event';
@@ -49,7 +49,7 @@ describe('Profile', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('Change name', async () => {
+  it('Change name', () => {
     render(
       <Provider store={store}>
         <Profile />
@@ -59,9 +59,7 @@ describe('Profile', () => {
       target: { value: 'My name' },
     });
     fireEvent.click(screen.getAllByRole('button')[2]);
-    await waitFor(() =>
-      expect(screen.getByText(/My name/)).toBeInTheDocument()
-    );
+    expect(screen.getByText(/My name/)).toBeInTheDocument();
   });
 
   it('Toggle profile visibility', () => {
